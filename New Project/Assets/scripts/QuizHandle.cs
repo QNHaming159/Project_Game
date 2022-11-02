@@ -34,22 +34,6 @@ public class QuizHandle : MonoBehaviour {
     bool Pause = false;
 
     float delay_time = 4f;
-
-    //Button manager
-    public void Button_manager() {
-        Button_A.interactable = false;
-        Button_B.interactable = false;
-        Button_C.interactable = false;
-        Button_D.interactable = false;
-        this.Wait(delay_time,()=>{
-            Button_A.interactable = true;
-            Button_B.interactable = true;
-            Button_C.interactable = true;
-            Button_D.interactable = true;
-            New_Question();
-            refresh_color();
-        });
-    }
     
     //refresh button color
     void refresh_color() {
@@ -61,7 +45,7 @@ public class QuizHandle : MonoBehaviour {
 
     //Check if answer true
     void Checkiftrue(int button) {
-        if (!(Index<=TotalQuestion-1)) {return;}
+        if (!(Index<=TotalQuestion)) {return;}
         if (!(Pause==false)) {return;}
 
         Button_manager();
@@ -135,6 +119,22 @@ public class QuizHandle : MonoBehaviour {
                 }
             Index += 1;
         }
+    }
+
+    //Button manager
+    public void Button_manager() {
+        Button_A.interactable = false;
+        Button_B.interactable = false;
+        Button_C.interactable = false;
+        Button_D.interactable = false;
+        this.Wait(delay_time,()=>{
+            Button_A.interactable = true;
+            Button_B.interactable = true;
+            Button_C.interactable = true;
+            Button_D.interactable = true;
+            New_Question();
+            refresh_color();
+        });
     }
 
     //Start function
