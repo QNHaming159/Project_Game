@@ -35,6 +35,8 @@ public class QuizHandle : MonoBehaviour {
 
     float delay_time = 4f;
     
+    ////////////////////////////////////////////////////////////////////////////////
+
     //refresh button color
     void refresh_color() {
         Button_A.GetComponent<Image>().color = Color.white;
