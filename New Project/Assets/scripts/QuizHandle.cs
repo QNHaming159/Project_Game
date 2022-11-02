@@ -1,17 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class QuizHandle : MonoBehaviour {
-    //TMP_Text
+    //Buttons
+    public Button Button_A;
+    public Button Button_B;
+    public Button Button_C;
+    public Button Button_D;
+
+    //TMP_Texts
     public TMP_Text Question_Text;
     public TMP_Text AnswerA_Text;
     public TMP_Text AnswerB_Text;
     public TMP_Text AnswerC_Text;
     public TMP_Text AnswerD_Text;
 
-    //Question List
+    //Questions List
     [System.Serializable]
     public class DataList {
         public string Question;
@@ -22,20 +29,74 @@ public class QuizHandle : MonoBehaviour {
     }
     public List<DataList> Data;
 
-    //Public Variable
-    public int Index, TotalQuestion, true_num;
+    //Variable
+    int Index, TotalQuestion, true_num;
+    bool Pause = false;
+
+    float delay_time = 4f;
+
+    //Button manager
+    public void Button_manager() {
+        Button_A.interactable = false;
+        Button_B.interactable = false;
+        Button_C.interactable = false;
+        Button_D.interactable = false;
+        this.Wait(delay_time,()=>{
+            Button_A.interactable = true;
+            Button_B.interactable = true;
+            Button_C.interactable = true;
+            Button_D.interactable = true;
+            New_Question();
+            refresh_color();
+        });
+    }
+    
+    //refresh button color
+    void refresh_color() {
+        Button_A.GetComponent<Image>().color = Color.white;
+        Button_B.GetComponent<Image>().color = Color.white;
+        Button_C.GetComponent<Image>().color = Color.white;
+        Button_D.GetComponent<Image>().color = Color.white;
+    }
 
     //Check if answer true
-    void Checkiftrue (int button) {
-        if (Index<=TotalQuestion-1) {
-            //Correct answer
-            if (true_num == button) {
-                print("Correct!");
-            }
-            //Wrong answer
-            else {
-                print("Wrong!");
-            }
+    void Checkiftrue(int button) {
+        if (!(Index<=TotalQuestion-1)) {return;}
+        if (!(Pause==false)) {return;}
+
+        Button_manager();
+        //Highlight wrong answer
+        if (true_num != button) {
+            switch (button) {
+            case 1:
+                Button_A.GetComponent<Image>().color = Color.red;
+                break;
+            case 2:
+                Button_B.GetComponent<Image>().color = Color.red;
+                break;
+            case 3:
+                Button_C.GetComponent<Image>().color = Color.red;
+                break;
+            case 4:
+                Button_D.GetComponent<Image>().color = Color.red;
+                break;
+        }
+        }
+
+        //Highlight true answer
+        switch (true_num) {
+            case 1:
+                Button_A.GetComponent<Image>().color = Color.green;
+                break;
+            case 2:
+                Button_B.GetComponent<Image>().color = Color.green;
+                break;
+            case 3:
+                Button_C.GetComponent<Image>().color = Color.green;
+                break;
+            case 4:
+                Button_D.GetComponent<Image>().color = Color.green;
+                break;
         }
     }
 
@@ -51,8 +112,8 @@ public class QuizHandle : MonoBehaviour {
                     AnswerA_Text.text = Data[Index].TrueAnswer;
                     AnswerB_Text.text = Data[Index].FalseAnswer1;
                     AnswerC_Text.text = Data[Index].FalseAnswer2;
-                     AnswerD_Text.text = Data[Index].FalseAnswer3;
-                     break;
+                    AnswerD_Text.text = Data[Index].FalseAnswer3;
+                    break;
                 case 2:
                     AnswerA_Text.text = Data[Index].FalseAnswer1;
                     AnswerB_Text.text = Data[Index].TrueAnswer;
@@ -76,7 +137,6 @@ public class QuizHandle : MonoBehaviour {
         }
     }
 
-
     //Start function
     void Start() {
         //Update variable
@@ -89,18 +149,14 @@ public class QuizHandle : MonoBehaviour {
     //Button controller
     public void ButtonA() {
         Checkiftrue(1);
-        New_Question();
     }
     public void ButtonB() {
         Checkiftrue(2);
-        New_Question();
     }
     public void ButtonC() {
         Checkiftrue(3);
-        New_Question();
     }
     public void ButtonD() {
         Checkiftrue(4);
-        New_Question();
     }
 }
