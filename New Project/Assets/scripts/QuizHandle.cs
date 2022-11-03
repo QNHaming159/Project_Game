@@ -29,6 +29,9 @@ public class QuizHandle : MonoBehaviour {
     }
     public List<DataList> Data;
 
+    //Animation
+    Animator animator;
+
     //Variable
     int Index, TotalQuestion, true_num;
     bool Pause = false;
@@ -66,6 +69,12 @@ public class QuizHandle : MonoBehaviour {
                 Button_D.GetComponent<Image>().color = Color.red;
                 break;
             }
+            // <= enemy attack
+        }
+        //I
+        else if (true_num == button) {
+            // <= player attack action
+            animator.SetTrigger("swordAttack");
         }
 
         //Highlight true answer
@@ -143,6 +152,8 @@ public class QuizHandle : MonoBehaviour {
         //Update variable
         TotalQuestion = Data.Count;
         Index = 0;
+
+        animator = GetComponent<Animator>();
 
         New_Question();
     }

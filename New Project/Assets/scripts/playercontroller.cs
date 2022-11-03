@@ -12,10 +12,10 @@ public class playercontroller : MonoBehaviour
     public float attackRange =0.5f;
     public LayerMask enemyLayers;
     public SwordAttack swordAttack;
+    public Animator animator;
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
-    Animator animator;
     List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
     bool canMove = true;
     void Start(){
@@ -46,7 +46,6 @@ public class playercontroller : MonoBehaviour
                 spriteRenderer.flipX = false;
             }
         }
-
     }
     private bool TryMove(Vector2 direction){
         if(direction != Vector2.zero){
@@ -69,7 +68,7 @@ public class playercontroller : MonoBehaviour
         movementInput = movementValue.Get<Vector2>();
     }
 
-    void OnFire() {
+    public void OnFire() {
         animator.SetTrigger("swordAttack");
     }
 
