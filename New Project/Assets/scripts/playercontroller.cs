@@ -11,6 +11,7 @@ public class playercontroller : MonoBehaviour
     public Transform attackpoint;
     public float attackRange =0.5f;
     public LayerMask enemyLayers;
+    public SwordAttack swordAttack;
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
@@ -63,14 +64,31 @@ public class playercontroller : MonoBehaviour
             return false;
         }
     }
-    void OnMove(InputValue movementvalue){
-        movementInput = movementvalue.Get<Vector2>();
+    
+    void OnMove(InputValue movementValue) {
+        movementInput = movementValue.Get<Vector2>();
     }
-    void  OnFire(){
-        animator.SetTrigger("Swordattack");
-        
+
+    void OnFire() {
+        animator.SetTrigger("swordAttack");
     }
-    public void LockMovement(){
+
+        public void SwordAttack() {
+            LockMovement();
+
+            if(spriteRenderer.flipX == true){
+                swordAttack.AttackLeft();
+            } else {
+                swordAttack.AttackRight();
+            }
+        }
+
+    public void EndSwordAttack() {
+        UnlockMovement();
+        swordAttack.StopAttack();
+    }
+
+    public void LockMovement() {
         canMove = false;
     }
     public void UnlockMovement(){
