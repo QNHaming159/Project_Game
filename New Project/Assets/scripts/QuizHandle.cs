@@ -74,7 +74,7 @@ public class QuizHandle : MonoBehaviour {
         //I
         else if (true_num == button) {
             // <= player attack action
-            animator.SetTrigger("swordAttack");
+            animator.Play("player_onlyattack");
         }
 
         //Highlight true answer
