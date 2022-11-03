@@ -86,15 +86,15 @@ public class playercontroller : MonoBehaviour
         animator.SetTrigger("swordAttack");
     }
 
-    public void SwordAttack() {
-        LockMovement();
+        public void SwordAttack() {
+            LockMovement();
 
-        if(spriteRenderer.flipX == true){
-            swordAttack.AttackLeft();
-        } else {
-            swordAttack.AttackRight();
+            if(spriteRenderer.flipX == true){
+                swordAttack.AttackLeft();
+            } else {
+                swordAttack.AttackRight();
+            }
         }
-    }
 
     public void EndSwordAttack() {
         UnlockMovement();
