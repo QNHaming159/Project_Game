@@ -63,13 +63,6 @@ public class playercontroller : MonoBehaviour
             return false;
         }
     }
-    void OnMove(InputValue movementvalue){
-        movementInput = movementvalue.Get<Vector2>();
-    }
-    void  OnFire(){
-        animator.SetTrigger("Swordattack");
-        
-    }
 
     void OnMove(InputValue movementValue) {
         movementInput = movementValue.Get<Vector2>();
