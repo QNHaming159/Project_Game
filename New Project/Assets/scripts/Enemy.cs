@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Enemy : MonoBehaviour
 {
     Animator animator;
@@ -27,9 +28,13 @@ public class Enemy : MonoBehaviour
 
     public void Defeated(){
         animator.SetTrigger("Defeated");
+        ScoreScript.scoreValue += 10;
     }
 
     public void RemoveEnemy() {
+        GameObject.Find(gameObject.name + ("spawn point")).GetComponent<Enemyrespawn>().Death = true;
         Destroy(gameObject);
+        
     }
+   
 }

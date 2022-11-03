@@ -37,6 +37,9 @@ public class QuizHandle : MonoBehaviour {
     bool Pause = false;
     float delay_time = 3f;
     
+    Enemy enemy;
+    
+    
     ////////////////////////////////////////////////////////////////////////////////
 
     //refresh button color
@@ -74,7 +77,8 @@ public class QuizHandle : MonoBehaviour {
         //I
         else if (true_num == button) {
             // <= player attack action
-            animator.Play("player_onlyattack");
+            animator.Play("player_attack");
+            enemy.Defeated();
         }
 
         //Highlight true answer
