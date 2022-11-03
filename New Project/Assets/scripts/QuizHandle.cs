@@ -32,8 +32,7 @@ public class QuizHandle : MonoBehaviour {
     //Variable
     int Index, TotalQuestion, true_num;
     bool Pause = false;
-
-    float delay_time = 4f;
+    float delay_time = 3f;
     
     ////////////////////////////////////////////////////////////////////////////////
 
@@ -66,7 +65,7 @@ public class QuizHandle : MonoBehaviour {
             case 4:
                 Button_D.GetComponent<Image>().color = Color.red;
                 break;
-        }
+            }
         }
 
         //Highlight true answer
