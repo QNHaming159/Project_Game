@@ -11,6 +11,7 @@ public class playercontroller : MonoBehaviour
     public Transform attackpoint;
     public float attackRange =0.5f;
     public LayerMask enemyLayers;
+    public SwordAttack swordAttack;
     Vector2 movementInput;
     SpriteRenderer spriteRenderer;
     Rigidbody2D rb;
@@ -63,7 +64,7 @@ public class playercontroller : MonoBehaviour
             return false;
         }
     }
-
+    
     void OnMove(InputValue movementValue) {
         movementInput = movementValue.Get<Vector2>();
     }
