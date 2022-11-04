@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    Animator animator;
+    Animator animator_enemy;
 
     public float Health {
         set {
@@ -23,18 +23,19 @@ public class Enemy : MonoBehaviour
     public float health = 1;
 
     private void Start() {
-        animator = GetComponent<Animator>();
+        ScoreScript.scoreValue = -10;
+        animator_enemy = GetComponent<Animator>();
     }
 
     public void Defeated(){
-        animator.SetTrigger("Defeated");
+        animator_enemy.SetTrigger("Defeated");
         ScoreScript.scoreValue += 10;
     }
 
-    public void RemoveEnemy() {
+    /*public void RemoveEnemy() {
         GameObject.Find(gameObject.name + ("spawn point")).GetComponent<Enemyrespawn>().Death = true;
         Destroy(gameObject);
         
-    }
+    }*/
    
 }

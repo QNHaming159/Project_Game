@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using TMPro;
 
 public class QuizHandle : MonoBehaviour {
+
+    public GameObject Gameobject_enemy;
+
     //Buttons
     public Button Button_A;
     public Button Button_B;
@@ -12,6 +15,7 @@ public class QuizHandle : MonoBehaviour {
     public Button Button_D;
 
     //TMP_Texts
+    public TMP_Text Score_Text;
     public TMP_Text Question_Text;
     public TMP_Text AnswerA_Text;
     public TMP_Text AnswerB_Text;
@@ -34,11 +38,9 @@ public class QuizHandle : MonoBehaviour {
 
     //Variable
     int Index, TotalQuestion, true_num;
+    public int score = 0;
     bool Pause = false;
     float delay_time = 3f;
-    
-    Enemy enemy;
-    
     
     ////////////////////////////////////////////////////////////////////////////////
 
@@ -77,8 +79,11 @@ public class QuizHandle : MonoBehaviour {
         //I
         else if (true_num == button) {
             // <= player attack action
-            animator.Play("player_attack");
-            enemy.Defeated();
+            animator.SetTrigger("attackani");
+            Gameobject_enemy.GetComponent<Animator>().SetTrigger("Defeated");
+
+            score += 10;
+            Score_Text.text = "Score: " + score;
         }
 
         //Highlight true answer
