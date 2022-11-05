@@ -151,6 +151,8 @@ public class QuizHandle : MonoBehaviour {
             Button_B.interactable = true;
             Button_C.interactable = true;
             Button_D.interactable = true;
+            
+            Gameobject_enemy.GetComponent<Animator>().SetTrigger("Respawn");
             New_Question();
             refresh_color();
         });
