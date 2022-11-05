@@ -166,7 +166,6 @@ public class QuizHandle : MonoBehaviour {
     void Start() {
         //Update variable
         TotalQuestion = Data.Count;
-        Index = 0;
 
         animator = GetComponent<Animator>();
 

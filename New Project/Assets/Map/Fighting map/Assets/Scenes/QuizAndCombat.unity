@@ -657,7 +657,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729747333}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2784f686b3037b0479a4578acb12a971, type: 3}
   m_Name: 
@@ -743,7 +743,6 @@ MonoBehaviour:
       \u0111\u1ED9ng  \"S\u1EF1 t\xEDch tr\u1EA7u cau\"."
     FalseAnswer3: "G\u1EE3i nh\u1EDB h\xECnh \u1EA3nh ng\u01B0\u1EDDi b\xE0 \u0103n
       tr\u1EA7u khi x\u01B0a c\u1EE7a t\xE1c gi\u1EA3."
-  score: 0
 --- !u!1 &944506714
 GameObject:
   m_ObjectHideFlags: 0
@@ -922,6 +921,75 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 982193204}
   m_CullTransparentMesh: 1
+--- !u!1 &1030287926
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1030287928}
+  - component: {fileID: 1030287927}
+  m_Layer: 0
+  m_Name: ScriptHandle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1030287927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030287926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59497fb9aec630d4f8a15e06604cddb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Gameobject_Character:
+  - {fileID: 207443595}
+  - {fileID: 729747333}
+  Gameobject_Button:
+  - {fileID: 1106274666}
+  - {fileID: 582785107}
+  - {fileID: 1962848830}
+  - {fileID: 982193204}
+  Gameobject_Text:
+  - {fileID: 563254783}
+  - {fileID: 1075727381}
+  - {fileID: 1089736397}
+  - {fileID: 1644173313}
+  - {fileID: 2019134688}
+  Question_Data:
+  - Question: Is this the firstever question?
+    TrueAnswer: Yes
+    FalseAnswer1: No
+    FalseAnswer2: IDK
+    FalseAnswer3: Maybe
+  - Question: Is this second question?
+    TrueAnswer: Yes
+    FalseAnswer1: No
+    FalseAnswer2: IDK
+    FalseAnswer3: Maybe
+--- !u!4 &1030287928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030287926}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.050093666, y: 0.33803442, z: 92.324234}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1043096829
 GameObject:
   m_ObjectHideFlags: 0

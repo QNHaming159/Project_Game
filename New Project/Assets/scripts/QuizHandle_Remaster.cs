@@ -1,0 +1,151 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
+public class QuizHandle_Remaster : MonoBehaviour {
+
+    //GameObject Variables
+    public GameObject[] Gameobject_Character;
+    public GameObject[] Gameobject_Button;
+    public GameObject[] Gameobject_Text;
+
+    //Questions Variables
+    [System.Serializable]
+    public class DataList {
+        public string Question;
+        public string TrueAnswer;
+        public string FalseAnswer1;
+        public string FalseAnswer2;
+        public string FalseAnswer3;
+    }
+    public List<DataList> Question_Data;
+
+    //Array Variables
+    int[] ID_array = new int [4];
+
+    //Common Variables
+    int ID, TotalQuestion, True_Answer, Score = 0, Index = 0;
+
+    float delay_NextQuestion = 3f;
+    bool Pause = false;
+
+    ///////////////////////////////////////////////////////////////////////////////
+
+    // <= A attack B // Player attack Enemy
+    void AttackA_B() {
+        print("A >> B");
+    }
+
+    // <= B attack A // Enemy attack Player
+    void AttackB_A() {
+        print("B >> A");
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////
+
+    // <= NextID()
+    int NextID() {
+        for (int i=0;i<=3;i++) {
+            if (ID_array[i]!=0) {
+                if (ID_array[i]!=True_Answer) {
+                    ID = ID_array[i];
+                    ID_array[i] = 0;
+                    break;
+                }
+            }
+        }
+        return ID;
+    }
+
+    // <= RenewArray()
+    void RenewArray() {
+        ID_array[0] = 1;
+        ID_array[1] = 2;
+        ID_array[2] = 3;
+        ID_array[3] = 4;
+    }
+
+    // <= NewQuestion()
+    void NextQuestion() {
+        RenewArray();
+        True_Answer = Random.Range(1,Gameobject_Button.Length+1);
+
+        //Change text info
+        Gameobject_Text[0].GetComponent<TMP_Text>().text = Question_Data[Index].Question;
+        Gameobject_Text[True_Answer].GetComponent<TMP_Text>().text = Question_Data[Index].TrueAnswer;
+        Gameobject_Text[NextID()].GetComponent<TMP_Text>().text = Question_Data[Index].FalseAnswer1;
+        Gameobject_Text[NextID()].GetComponent<TMP_Text>().text = Question_Data[Index].FalseAnswer2;
+        Gameobject_Text[NextID()].GetComponent<TMP_Text>().text = Question_Data[Index].FalseAnswer3;
+    }
+
+    // <= HighlightAnswers()
+    void HighlightAnswers(int buttonpress) {
+        // Hightlight wrong answer - IF HAVE
+        if (True_Answer-1 != buttonpress) {
+            Gameobject_Button[buttonpress].GetComponent<Image>().color = Color.red;
+            AttackB_A();
+        }
+        else AttackA_B();
+        // Hightlight right answer
+        Gameobject_Button[True_Answer-1].GetComponent<Image>().color = Color.green;
+    }
+
+    // <= RemoveHighlight()
+    void RemoveHighlight() {
+        for (int i=0;i<=Gameobject_Button.Length-1;i++) {
+            Gameobject_Button[i].GetComponent<Image>().color = Color.white;
+        }
+    }
+
+    // <= Buttons_Enable()
+    void Buttons_Enable(bool value) {
+        for (int i=0;i<=Gameobject_Button.Length-1;i++) {
+            Gameobject_Button[i].GetComponent<Button>().interactable = value;
+        }
+    }
+
+    // <= ButtonPressed()
+    void ButtonPressed(int buttonpress) {
+        if (!(Index<TotalQuestion)) {return;}
+        if (!(Pause==false)) {return;}
+
+        Buttons_Enable(false);
+        HighlightAnswers(buttonpress);
+        // Delay
+        this.Wait(delay_NextQuestion,()=>{
+            Index += 1;
+            Buttons_Enable(true);
+            RemoveHighlight();
+            NextQuestion();
+        });
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////
+
+    // <= Start()
+    void Start() {
+        //Set values for common variables
+        TotalQuestion = Question_Data.Count;
+
+        // <= Start game
+        NextQuestion();
+    }
+
+    ///////////////////////////////////////////////////////////////////////////////
+
+    // <<<< Button event
+    public void ButtonA() {
+        ButtonPressed(0);
+    }
+    public void ButtonB() {
+        ButtonPressed(1);
+    }
+    public void ButtonC() {
+        ButtonPressed(2);
+    }
+    public void ButtonD() {
+        ButtonPressed(3);
+    }
+}
