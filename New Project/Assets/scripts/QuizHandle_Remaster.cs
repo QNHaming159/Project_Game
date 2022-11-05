@@ -82,8 +82,8 @@ public class QuizHandle_Remaster : MonoBehaviour {
     // <= HighlightAnswers()
     void HighlightAnswers(int buttonpress) {
         // Hightlight wrong answer - IF HAVE
-        if (True_Answer-1 != buttonpress) {
-            Gameobject_Button[buttonpress].GetComponent<Image>().color = Color.red;
+        if (True_Answer != buttonpress) {
+            Gameobject_Button[buttonpress-1].GetComponent<Image>().color = Color.red;
             AttackB_A();
         }
         else AttackA_B();
@@ -135,15 +135,15 @@ public class QuizHandle_Remaster : MonoBehaviour {
 
     // <<<< Button event
     public void ButtonA() {
-        ButtonPressed(0);
-    }
-    public void ButtonB() {
         ButtonPressed(1);
     }
-    public void ButtonC() {
+    public void ButtonB() {
         ButtonPressed(2);
     }
-    public void ButtonD() {
+    public void ButtonC() {
         ButtonPressed(3);
+    }
+    public void ButtonD() {
+        ButtonPressed(4);
     }
 }
