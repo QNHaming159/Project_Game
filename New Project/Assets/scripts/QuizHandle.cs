@@ -37,8 +37,7 @@ public class QuizHandle : MonoBehaviour {
     Animator animator;
 
     //Variable
-    int Index, TotalQuestion, true_num;
-    public int score = 0;
+    int TotalQuestion, true_num, score = 0, Index = 0;
     bool Pause = false;
     float delay_time = 3f;
     
@@ -105,7 +104,12 @@ public class QuizHandle : MonoBehaviour {
 
     //New_Question function
     void New_Question() {
-        if (Index<=TotalQuestion-1) {
+        if (Index==TotalQuestion) {
+            Application.Quit();
+            print("Quit");
+        }
+
+        else if (Index<=TotalQuestion-1) {
 
             //Get true button
             true_num = Random.Range(1,5);
@@ -152,8 +156,8 @@ public class QuizHandle : MonoBehaviour {
             Button_C.interactable = true;
             Button_D.interactable = true;
             
-            Gameobject_enemy.GetComponent<Animator>().SetTrigger("Respawn");
             New_Question();
+            Gameobject_enemy.GetComponent<Animator>().SetTrigger("Respawn");
             refresh_color();
         });
     }
