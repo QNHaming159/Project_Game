@@ -38,7 +38,6 @@ public class QuizHandle : MonoBehaviour {
 
     //Variable
     int TotalQuestion, true_num, score = 0, Index = 0;
-    bool Pause = false;
     float delay_time = 3f;
     
     ////////////////////////////////////////////////////////////////////////////////
@@ -54,7 +53,6 @@ public class QuizHandle : MonoBehaviour {
     //Check if answer true
     void Checkiftrue(int button) {
         if (!(Index<=TotalQuestion)) {return;}
-        if (!(Pause==false)) {return;}
 
         Button_manager();
         //Highlight wrong answer

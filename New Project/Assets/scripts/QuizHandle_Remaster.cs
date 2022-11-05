@@ -29,7 +29,6 @@ public class QuizHandle_Remaster : MonoBehaviour {
     int ID, TotalQuestion, True_Answer, Score = 0, Index = 0;
 
     float delay_NextQuestion = 3f;
-    bool Pause = false;
 
     ///////////////////////////////////////////////////////////////////////////////
 
@@ -109,7 +108,6 @@ public class QuizHandle_Remaster : MonoBehaviour {
     // <= ButtonPressed()
     void ButtonPressed(int buttonpress) {
         if (!(Index<TotalQuestion)) {return;}
-        if (!(Pause==false)) {return;}
 
         Buttons_Enable(false);
         HighlightAnswers(buttonpress);
