@@ -102,6 +102,7 @@ public class QuizHandle_Remaster : MonoBehaviour {
         // IF next Question is available
         if (Index<TotalQuestion) {
             RenewArray();
+            Buttons_Enable(true);
             True_Answer = Random.Range(1,Gameobject_Button.Length+1);
 
             //Change text info
@@ -110,8 +111,6 @@ public class QuizHandle_Remaster : MonoBehaviour {
             Question_Text[NextID()].GetComponent<TMP_Text>().text = Question_Data[Index].FalseAnswer1;
             Question_Text[NextID()].GetComponent<TMP_Text>().text = Question_Data[Index].FalseAnswer2;
             Question_Text[NextID()].GetComponent<TMP_Text>().text = Question_Data[Index].FalseAnswer3;
-        
-            Buttons_Enable(true);
         }
         // Else run out Question
         else {Quit();}
@@ -121,8 +120,8 @@ public class QuizHandle_Remaster : MonoBehaviour {
     void HighlightAnswers(int buttonpress) {
         // Hightlight wrong answer -- IF HAVE
         if (True_Answer != buttonpress) {
-            Gameobject_Button[buttonpress-1].GetComponent<Image>().color = Color.red;
             AttackB_A();
+            Gameobject_Button[buttonpress-1].GetComponent<Image>().color = Color.red;
         }
         else AttackA_B();
         // Hightlight right answer
