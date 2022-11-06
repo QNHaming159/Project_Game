@@ -9,18 +9,20 @@ public class QuizHandle_Remaster : MonoBehaviour {
     //GameObject Variables
     public GameObject[] Gameobject_Character;
     public GameObject[] Gameobject_Button;
-    public GameObject[] Gameobject_Text;
+    public GameObject[] Question_Text;
+
+    public GameObject Score_Text;
 
     //Questions Variables
     [System.Serializable]
-    public class DataList {
+    public class Questions {
         public string Question;
         public string TrueAnswer;
         public string FalseAnswer1;
         public string FalseAnswer2;
         public string FalseAnswer3;
     }
-    public List<DataList> Question_Data;
+    public List<Questions> Question_Data;
 
     //Array Variables
     int[] ID_array = new int [4];
@@ -28,18 +30,25 @@ public class QuizHandle_Remaster : MonoBehaviour {
     //Common Variables
     int ID, TotalQuestion, True_Answer, Score = 0, Index = 0;
 
-    float delay_NextQuestion = 3f;
+    float delay_NextQuestion = 3f; // <-- Set delay
 
     ///////////////////////////////////////////////////////////////////////////////
 
     // <= A attack B // Player attack Enemy
     void AttackA_B() {
         print("A >> B");
+        ScoreUpdate(+10);
     }
 
     // <= B attack A // Enemy attack Player
     void AttackB_A() {
         print("B >> A");
+        ScoreUpdate(-10);
+    }
+
+    // <= Quit() // Ran out questions
+    void Quit() {
+        print("QUIT");
     }
 
     ///////////////////////////////////////////////////////////////////////////////
@@ -58,6 +67,12 @@ public class QuizHandle_Remaster : MonoBehaviour {
         return ID;
     }
 
+    // <= ScoreUpdate()
+    void ScoreUpdate(int num) {
+        Score += num;
+        Score_Text.GetComponent<TMP_Text>().text = "Score: " + (Score);
+    }
+
     // <= RenewArray()
     void RenewArray() {
         ID_array[0] = 1;
@@ -68,15 +83,20 @@ public class QuizHandle_Remaster : MonoBehaviour {
 
     // <= NewQuestion()
     void NextQuestion() {
-        RenewArray();
-        True_Answer = Random.Range(1,Gameobject_Button.Length+1);
+        // IF next Question is available
+        if (Index<TotalQuestion) {
+            RenewArray();
+            True_Answer = Random.Range(1,Gameobject_Button.Length+1);
 
-        //Change text info
-        Gameobject_Text[0].GetComponent<TMP_Text>().text = Question_Data[Index].Question;
-        Gameobject_Text[True_Answer].GetComponent<TMP_Text>().text = Question_Data[Index].TrueAnswer;
-        Gameobject_Text[NextID()].GetComponent<TMP_Text>().text = Question_Data[Index].FalseAnswer1;
-        Gameobject_Text[NextID()].GetComponent<TMP_Text>().text = Question_Data[Index].FalseAnswer2;
-        Gameobject_Text[NextID()].GetComponent<TMP_Text>().text = Question_Data[Index].FalseAnswer3;
+            //Change text info
+            Question_Text[0].GetComponent<TMP_Text>().text = Question_Data[Index].Question;
+            Question_Text[True_Answer].GetComponent<TMP_Text>().text = Question_Data[Index].TrueAnswer;
+            Question_Text[NextID()].GetComponent<TMP_Text>().text = Question_Data[Index].FalseAnswer1;
+            Question_Text[NextID()].GetComponent<TMP_Text>().text = Question_Data[Index].FalseAnswer2;
+            Question_Text[NextID()].GetComponent<TMP_Text>().text = Question_Data[Index].FalseAnswer3;
+        }
+        // Else run out Question
+        else {Quit();}
     }
 
     // <= HighlightAnswers()
@@ -111,7 +131,7 @@ public class QuizHandle_Remaster : MonoBehaviour {
 
         Buttons_Enable(false);
         HighlightAnswers(buttonpress);
-        // Delay
+        // Delay on press
         this.Wait(delay_NextQuestion,()=>{
             Index += 1;
             Buttons_Enable(true);
@@ -124,7 +144,7 @@ public class QuizHandle_Remaster : MonoBehaviour {
 
     // <= Start()
     void Start() {
-        //Set values for common variables
+        //Set value for common variables
         TotalQuestion = Question_Data.Count;
 
         // <= Start game
@@ -133,7 +153,7 @@ public class QuizHandle_Remaster : MonoBehaviour {
 
     ///////////////////////////////////////////////////////////////////////////////
 
-    // <<<< Button event
+    // <<<< Button function_event
     public void ButtonA() {
         ButtonPressed(1);
     }
