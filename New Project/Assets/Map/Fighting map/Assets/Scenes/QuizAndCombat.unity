@@ -951,19 +951,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gameobject_Character:
-  - {fileID: 207443595}
   - {fileID: 729747333}
+  - {fileID: 207443595}
   Gameobject_Button:
   - {fileID: 1106274666}
   - {fileID: 582785107}
   - {fileID: 1962848830}
   - {fileID: 982193204}
-  Gameobject_Text:
+  Question_Text:
   - {fileID: 563254783}
   - {fileID: 1075727381}
   - {fileID: 1089736397}
   - {fileID: 1644173313}
   - {fileID: 2019134688}
+  Score_Text: {fileID: 1424965546}
   Question_Data:
   - Question: Is this the firstever question?
     TrueAnswer: Yes
@@ -971,6 +972,36 @@ MonoBehaviour:
     FalseAnswer2: IDK
     FalseAnswer3: Maybe
   - Question: Is this second question?
+    TrueAnswer: Yes
+    FalseAnswer1: No
+    FalseAnswer2: IDK
+    FalseAnswer3: Maybe
+  - Question: Is this third question?
+    TrueAnswer: Yes
+    FalseAnswer1: No
+    FalseAnswer2: IDK
+    FalseAnswer3: Maybe
+  - Question: Is this 4th question?
+    TrueAnswer: Yes
+    FalseAnswer1: No
+    FalseAnswer2: IDK
+    FalseAnswer3: Maybe
+  - Question: Is this 5th question?
+    TrueAnswer: Yes
+    FalseAnswer1: No
+    FalseAnswer2: IDK
+    FalseAnswer3: Maybe
+  - Question: Is this 6th question?
+    TrueAnswer: Yes
+    FalseAnswer1: No
+    FalseAnswer2: IDK
+    FalseAnswer3: Maybe
+  - Question: Is this 7th question?
+    TrueAnswer: Yes
+    FalseAnswer1: No
+    FalseAnswer2: IDK
+    FalseAnswer3: Maybe
+  - Question: Is this 8th question?
     TrueAnswer: Yes
     FalseAnswer1: No
     FalseAnswer2: IDK
@@ -1195,7 +1226,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -145.46889, y: 0, z: -235.14812, w: 0}
+  m_margin: {x: -237.87363, y: 0, z: -235.14812, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1330,7 +1361,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -242.90794, y: 0, z: -243.74562, w: 0}
+  m_margin: {x: -242.90794, y: 0, z: -331.99927, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1926,7 +1957,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -242.90794, y: 0, z: -243.74562, w: 0}
+  m_margin: {x: -336.77982, y: 0, z: -243.74562, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2637,7 +2668,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -242.90794, y: 0, z: -243.74562, w: 0}
+  m_margin: {x: -242.90794, y: 0, z: -340.1208, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

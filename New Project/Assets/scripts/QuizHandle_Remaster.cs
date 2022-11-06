@@ -30,19 +30,29 @@ public class QuizHandle_Remaster : MonoBehaviour {
     //Common Variables
     int ID, TotalQuestion, True_Answer, Score = 0, Index = 0;
 
+    bool Enemy_Respawn = false;
     float delay_NextQuestion = 3f; // <-- Set delay
 
     ///////////////////////////////////////////////////////////////////////////////
 
     // <= A attack B // Player attack Enemy
     void AttackA_B() {
-        print("A >> B");
+        //Animations
+        Gameobject_Character[0].GetComponent<Animator>().SetTrigger("Attack");
+        Gameobject_Character[1].GetComponent<Animator>().SetTrigger("Defeated");
+
+        Enemy_Respawn = true;
+
+        //Update Score // +10
         ScoreUpdate(+10);
     }
 
     // <= B attack A // Enemy attack Player
     void AttackB_A() {
-        print("B >> A");
+        //Animations
+        
+
+        //Update Score // -10
         ScoreUpdate(-10);
     }
 
@@ -52,6 +62,14 @@ public class QuizHandle_Remaster : MonoBehaviour {
     }
 
     ///////////////////////////////////////////////////////////////////////////////
+
+    // <= RenewArray()
+    void RenewArray() {
+        ID_array[0] = 1;
+        ID_array[1] = 2;
+        ID_array[2] = 3;
+        ID_array[3] = 4;
+    }
 
     // <= NextID()
     int NextID() {
@@ -67,18 +85,18 @@ public class QuizHandle_Remaster : MonoBehaviour {
         return ID;
     }
 
+    // <= Enemy_Update() 
+    void Enemy_Update() {
+        if (Enemy_Respawn==true) {
+            Gameobject_Character[1].GetComponent<Animator>().SetTrigger("Respawn");
+            Enemy_Respawn = false;
+        }
+    }
+    
     // <= ScoreUpdate()
     void ScoreUpdate(int num) {
         Score += num;
         Score_Text.GetComponent<TMP_Text>().text = "Score: " + (Score);
-    }
-
-    // <= RenewArray()
-    void RenewArray() {
-        ID_array[0] = 1;
-        ID_array[1] = 2;
-        ID_array[2] = 3;
-        ID_array[3] = 4;
     }
 
     // <= NewQuestion()
@@ -137,6 +155,7 @@ public class QuizHandle_Remaster : MonoBehaviour {
             Buttons_Enable(true);
             RemoveHighlight();
             NextQuestion();
+            Enemy_Update();
         });
     }
 
