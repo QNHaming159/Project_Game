@@ -50,7 +50,7 @@ public class QuizHandle_Remaster : MonoBehaviour {
     // <= B attack A // Enemy attack Player
     void AttackB_A() {
         //Animations
-        
+
 
         //Update Score // -10
         ScoreUpdate(-10);
@@ -74,13 +74,12 @@ public class QuizHandle_Remaster : MonoBehaviour {
     // <= NextID()
     int NextID() {
         for (int i=0;i<=3;i++) {
-            if (ID_array[i]!=0) {
-                if (ID_array[i]!=True_Answer) {
-                    ID = ID_array[i];
-                    ID_array[i] = 0;
-                    break;
-                }
-            }
+            if (ID_array[i]==0) continue;
+            if (ID_array[i]==True_Answer) continue;
+            
+            ID = ID_array[i];
+            ID_array[i] = 0;
+            break;
         }
         return ID;
     }

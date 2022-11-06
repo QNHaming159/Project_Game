@@ -966,46 +966,75 @@ MonoBehaviour:
   - {fileID: 2019134688}
   Score_Text: {fileID: 1424965546}
   Question_Data:
-  - Question: Is this the firstever question?
-    TrueAnswer: Yes
-    FalseAnswer1: No
-    FalseAnswer2: IDK
-    FalseAnswer3: Maybe
-  - Question: Is this second question?
-    TrueAnswer: Yes
-    FalseAnswer1: No
-    FalseAnswer2: IDK
-    FalseAnswer3: Maybe
-  - Question: Is this third question?
-    TrueAnswer: Yes
-    FalseAnswer1: No
-    FalseAnswer2: IDK
-    FalseAnswer3: Maybe
-  - Question: Is this 4th question?
-    TrueAnswer: Yes
-    FalseAnswer1: No
-    FalseAnswer2: IDK
-    FalseAnswer3: Maybe
-  - Question: Is this 5th question?
-    TrueAnswer: Yes
-    FalseAnswer1: No
-    FalseAnswer2: IDK
-    FalseAnswer3: Maybe
-  - Question: Is this 6th question?
-    TrueAnswer: Yes
-    FalseAnswer1: No
-    FalseAnswer2: IDK
-    FalseAnswer3: Maybe
-  - Question: Is this 7th question?
-    TrueAnswer: Yes
-    FalseAnswer1: No
-    FalseAnswer2: IDK
-    FalseAnswer3: Maybe
-  - Question: Is this 8th question?
-    TrueAnswer: Yes
-    FalseAnswer1: No
-    FalseAnswer2: IDK
-    FalseAnswer3: Maybe
+  - Question: "Nguy\u1EC5n Khoa \u0110i\u1EC1m xu\u1EA5t th\xE2n t\u1EEB \u0111\xE2u?"
+    TrueAnswer: "Hu\u1EBF"
+    FalseAnswer1: "Nam \u0110\u1ECBnh"
+    FalseAnswer2: "H\xE0 T\u0129nh"
+    FalseAnswer3: "Cao B\u1EB1ng"
+  - Question: "Nguy\u1EC5n Khoa \u0110i\u1EC1m l\xE0 nh\xE0 th\u01A1 thu\u1ED9c th\u1EC3
+      h\u1EC7 kh\xE1ng chi\u1EBFn ch\u1ED1ng n\u01B0\u1EDBc n\xE0o?"
+    TrueAnswer: "M\u0129"
+    FalseAnswer1: "Ph\xE1p"
+    FalseAnswer2: Anh
+    FalseAnswer3: "Nh\u1EADt"
+  - Question: "B\xE0i th\u01A1 \u0111\u01B0\u1EE3c vi\u1EBFt theo th\u1EC3 th\u01A1
+      gi?"
+    TrueAnswer: "T\u1EF1 do"
+    FalseAnswer1: "Th\u1EA5t ng\xF4n b\xE1t c\xFA"
+    FalseAnswer2: "L\u1EE5c b\xE1t"
+    FalseAnswer3: "Song th\u1EA5t l\u1EE5c b\xE1t"
+  - Question: "Tr\u01B0\u1EDDng ca \u201CM\u1EB7t \u0111\u01B0\u1EDDng kh\xE1t v\u1ECDng\u201D
+      \u0111\u01B0\u1EE3c t\xE1c gi\u1EA3 Nguy\u1EC5n Khoa \u0110i\u1EC1m ho\xE0n
+      th\xE0nh t\u1EA1i \u0111\xE2u?"
+    TrueAnswer: "Ho\xE0n th\xE0nh \u1EDF chi\u1EBFn khu Tr\u1ECB - Thi\xEAn n\u0103m
+      1971"
+    FalseAnswer1: "Ho\xE0n th\xE0nh \u1EDF chi\u1EBFn khu Tr\u1ECB - Thi\xEAn n\u0103m
+      1972"
+    FalseAnswer2: "Ho\xE0n th\xE0nh \u1EDF chi\u1EBFn khu Tr\u1ECB - Thi\xEAn n\u0103m
+      1973"
+    FalseAnswer3: "Ho\xE0n th\xE0nh \u1EDF chi\u1EBFn khu Tr\u1ECB - Thi\xEAn n\u0103m
+      1970"
+  - Question: "Gi\xE1 tr\u1ECB n\u1ED9i dung c\u1EE7a \u0111o\u1EA1n tr\xEDch \u201C\u0110\u1EA5t
+      N\u01B0\u1EDBc\u201D l\xE0:"
+    TrueAnswer: "C\u1EA3 hai \u0111\xE1p \xE1n \u0111\xFAng"
+    FalseAnswer1: "\u0110o\u1EA1n tr\xEDch th\u1EC3 hi\u1EC7n m\u1ED9t c\xE1i nh\xECn
+      m\u1EDBi m\u1EBB v\u1EC1 \u0111\u1EA5t n\u01B0\u1EDBc: \u0110\u1EA5t n\u01B0\u1EDBc
+      l\xE0 s\u1EF1 h\u1ED9i t\u1EE5 v\xE0 k\u1EBFt tinh bao c\xF4ng s\u1EE9c v\xE0
+      kh\xE1t v\u1ECDng c\u1EE7a nh\xE2n d\xE2n. Nh\xE2n d\xE2n l\xE0 ng\u01B0\u1EDDi
+      l\xE0m ra \u0111\u1EA5t n\u01B0\u1EDBc"
+    FalseAnswer2: "Th\u1EE9c t\u1EC9nh tinh th\u1EA7n d\xE2n t\u1ED9c"
+    FalseAnswer3: "C\u1EA3 hai \u0111\xE1p \xE1n sai"
+  - Question: "V\u1ECB tr\xED \u0111o\u1EA1n tr\xEDch \u201C\u0110\u1EA5t N\u01B0\u1EDBc\u201D
+      l\xE0:"
+    TrueAnswer: "Ph\u1EA7n \u0111\u1EA7u ch\u01B0\u01A1ng V c\u1EE7a tr\u01B0\u1EDDng
+      ca \u201CM\u1EB7t \u0111\u01B0\u1EDDng kh\xE1t v\u1ECDng\u201D"
+    FalseAnswer1: "Ph\u1EA7n \u0111\u1EA7u ch\u01B0\u01A1ng XI c\u1EE7a tr\u01B0\u1EDDng
+      ca \u201CM\u1EB7t \u0111\u01B0\u1EDDng kh\xE1t v\u1ECDng\u201D"
+    FalseAnswer2: "Ph\u1EA7n \u0111\u1EA7u ch\u01B0\u01A1ng IV c\u1EE7a tr\u01B0\u1EDDng
+      ca \u201CM\u1EB7t \u0111\u01B0\u1EDDng kh\xE1t v\u1ECDng\u201D"
+    FalseAnswer3: "Ph\u1EA7n \u0111\u1EA7u ch\u01B0\u01A1ng IX c\u1EE7a tr\u01B0\u1EDDng
+      ca \u201CM\u1EB7t \u0111\u01B0\u1EDDng kh\xE1t v\u1ECDng\u201D"
+  - Question: "Theo Nguy\u1EC5n Khoa \u0110i\u1EC1m, ai l\xE0m ng\u01B0\u1EDDi \u0111\xE3
+      \u201CL\xE0m n\xEAn \u0110\u1EA5t N\u01B0\u1EDBc mu\xF4n \u0111\u1EDDi\u201D?"
+    TrueAnswer: "Nh\xE2n d\xE2n, nh\u1EEFng con ng\u01B0\u1EDDi b\xECnh d\u1ECB,
+      v\xF4 danh"
+    FalseAnswer1: "C\xE1c Vua H\xF9ng, Anh H\xF9ng"
+    FalseAnswer2: "C\xE1c tri\u1EC1u \u0111\u1EA1i phong ki\u1EBFn"
+    FalseAnswer3: "T\u1EA5t c\u1EA3 c\xE1c \u0111\xE1p \xE1n tr\xEAn"
+  - Question: "\"\u0110\u1EA5t N\u01B0\u1EDBc b\u1EAFt \u0111\u1EA7u v\u1EDBi mi\u1EBFng
+      tr\u1EA7u b\xE2y gi\u1EDD b\xE0 \u0103n\" trong \u0110\u1EA5t N\u01B0\u1EDBc
+      c\u1EE7a Nguy\u1EC5n Khoa \u0110i\u1EC1m c\xF3 \xFD ngh\u0129a ph\xF9 h\u1EE3p
+      v\u1EDBi c\u1EA3m x\xFAc m\xE0 t\xE1c gi\u1EA3 \u0111ang th\u1EC3 hi\u1EC7n
+      l\xE0"
+    TrueAnswer: "\u0110\u1EA5t n\u01B0\u1EDBc g\u1EAFn v\u1EDBi nh\u1EEFng phong
+      t\u1EE5c l\xE2u \u0111\u1EDDi c\u1EE7a d\xE2n t\u1ED9c l\xE0 t\u1EE5c \u0103n
+      tr\u1EA7u c\xF3 t\u1EEB th\u1EDDi vua H\xF9ng."
+    FalseAnswer1: "G\u1EE3i nh\u1EDB h\xECnh \u1EA3nh th\xE2n thi\u1EBFt v\u1EC1
+      ng\u01B0\u1EDDi b\xE0 th\xE2n y\xEAu."
+    FalseAnswer2: "G\u1EE3i nh\u1EDB c\xE2u chuy\u1EC7n c\u1ED5 t\xEDch c\u1EA3m
+      \u0111\u1ED9ng  \"S\u1EF1 t\xEDch tr\u1EA7u cau\"."
+    FalseAnswer3: "G\u1EE3i nh\u1EDB h\xECnh \u1EA3nh ng\u01B0\u1EDDi b\xE0 \u0103n
+      tr\u1EA7u khi x\u01B0a c\u1EE7a t\xE1c gi\u1EA3."
 --- !u!4 &1030287928
 Transform:
   m_ObjectHideFlags: 0
