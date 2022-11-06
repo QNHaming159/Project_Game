@@ -111,6 +111,8 @@ public class QuizHandle_Remaster : MonoBehaviour {
             Question_Text[NextID()].GetComponent<TMP_Text>().text = Question_Data[Index].FalseAnswer1;
             Question_Text[NextID()].GetComponent<TMP_Text>().text = Question_Data[Index].FalseAnswer2;
             Question_Text[NextID()].GetComponent<TMP_Text>().text = Question_Data[Index].FalseAnswer3;
+        
+            Buttons_Enable(true);
         }
         // Else run out Question
         else {Quit();}
@@ -144,14 +146,11 @@ public class QuizHandle_Remaster : MonoBehaviour {
 
     // <= ButtonPressed()
     void ButtonPressed(int buttonpress) {
-        if (!(Index<TotalQuestion)) {return;}
-
         Buttons_Enable(false);
         HighlightAnswers(buttonpress);
         // Delay on press
         this.Wait(delay_NextQuestion,()=>{
             Index += 1;
-            Buttons_Enable(true);
             RemoveHighlight();
             NextQuestion();
             Enemy_Update();
