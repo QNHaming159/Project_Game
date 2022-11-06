@@ -35,24 +35,23 @@ public class QuizHandle_Remaster : MonoBehaviour {
 
     ///////////////////////////////////////////////////////////////////////////////
 
-    // <= A attack B // Player attack Enemy
+    // <= Player attack Enemy
     void AttackA_B() {
-        //Animations
+        Enemy_Respawn = true;
+
+        // Animations
         Gameobject_Character[0].GetComponent<Animator>().SetTrigger("Attack");
         Gameobject_Character[1].GetComponent<Animator>().SetTrigger("Defeated");
 
-        Enemy_Respawn = true;
-
-        //Update Score // +10
+        // Score +10
         ScoreUpdate(+10);
     }
 
-    // <= B attack A // Enemy attack Player
+    // <= Enemy attack Player
     void AttackB_A() {
-        //Animations
+        // Animations
 
-
-        //Update Score // -10
+        // Score -10
         ScoreUpdate(-10);
     }
 
@@ -120,7 +119,7 @@ public class QuizHandle_Remaster : MonoBehaviour {
 
     // <= HighlightAnswers()
     void HighlightAnswers(int buttonpress) {
-        // Hightlight wrong answer - IF HAVE
+        // Hightlight wrong answer -- IF HAVE
         if (True_Answer != buttonpress) {
             Gameobject_Button[buttonpress-1].GetComponent<Image>().color = Color.red;
             AttackB_A();
@@ -148,7 +147,7 @@ public class QuizHandle_Remaster : MonoBehaviour {
     void ButtonPressed(int buttonpress) {
         Buttons_Enable(false);
         HighlightAnswers(buttonpress);
-        // Delay on press
+        // After Delay
         this.Wait(delay_NextQuestion,()=>{
             Index += 1;
             RemoveHighlight();
