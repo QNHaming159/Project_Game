@@ -38,7 +38,7 @@ public class QuizHandle : MonoBehaviour {
 
     //Variable
     int TotalQuestion, true_num, score = 0, Index = 0;
-    float delay_time = 3f;
+    float delay_time = 10f;
     
     ////////////////////////////////////////////////////////////////////////////////
 

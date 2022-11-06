@@ -42,6 +42,7 @@ public class QuizHandle_Remaster : MonoBehaviour {
         // Animations
         Gameobject_Character[0].GetComponent<Animator>().SetTrigger("Attack");
         Gameobject_Character[1].GetComponent<Animator>().SetTrigger("Defeated");
+        
 
         // Score +10
         ScoreUpdate(+10);
@@ -50,7 +51,7 @@ public class QuizHandle_Remaster : MonoBehaviour {
     // <= Enemy attack Player
     void AttackB_A() {
         // Animations
-
+        Gameobject_Character[1].GetComponent<Animator>().SetTrigger("attackSlime");
         // Score -10
         ScoreUpdate(-10);
     }
