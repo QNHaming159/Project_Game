@@ -52,6 +52,7 @@ public class QuizHandle_Remaster : MonoBehaviour {
     void AttackB_A() {
         // Animations
         Gameobject_Character[1].GetComponent<Animator>().SetTrigger("attackSlime");
+        Gameobject_Character[0].GetComponent<Animator>().SetTrigger("hurt");
         // Score -10
         ScoreUpdate(-10);
     }

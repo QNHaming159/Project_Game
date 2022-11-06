@@ -100,6 +100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   movePoint: {fileID: 0}
+  dirt:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &4026980799069954125
 GameObject:
   m_ObjectHideFlags: 0
