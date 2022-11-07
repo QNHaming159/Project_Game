@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1858
     height: 1037
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Console
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -674,18 +674,18 @@ MonoBehaviour:
       m_ExpandedIDs: d6bfffff26c7ffff1afaffff1afbffff429f0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: Button_NEXT
+        m_OriginalName: Button_NEXT
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: -6688
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 8}
       m_SearchString: 
@@ -853,9 +853,9 @@ MonoBehaviour:
       e32: 0
       e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 9100000, guid: 70810a8789cb6114eb94d660cb23b706, type: 2}
+  m_AnimatorController: {fileID: 9100000, guid: 537bb0653c669be4883528c47a0408b4, type: 2}
   m_BreadCrumbs:
-  - m_Target: {fileID: -7615643020944218980, guid: 70810a8789cb6114eb94d660cb23b706, type: 2}
+  - m_Target: {fileID: -7817401576259529239, guid: 537bb0653c669be4883528c47a0408b4, type: 2}
     m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
@@ -1101,8 +1101,8 @@ MonoBehaviour:
     m_CachedPref: -160
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastInspectedObjectInstanceID: -6688
+  m_LastVerticalScrollValue: 54
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
