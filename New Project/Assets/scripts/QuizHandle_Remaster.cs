@@ -11,6 +11,7 @@ public class QuizHandle_Remaster : MonoBehaviour {
     public GameObject[] Gameobject_Button;
     public GameObject[] Question_Text;
 
+    public GameObject Button_Next;
     public GameObject Score_Text;
 
     //Questions Variables
@@ -31,7 +32,6 @@ public class QuizHandle_Remaster : MonoBehaviour {
     int ID, TotalQuestion, True_Answer, Score = 0, Index = 0;
 
     bool Enemy_Respawn = false;
-    float delay_NextQuestion = 3f; // <-- Set delay
 
     ///////////////////////////////////////////////////////////////////////////////
 
@@ -142,24 +142,23 @@ public class QuizHandle_Remaster : MonoBehaviour {
         }
     }
 
+    // <= NEXTButton_Enable()
+    void NEXTButton_Enable(bool value) {
+        Button_Next.GetComponent<Button>().interactable = value;
+    }
+
     // <= ButtonPressed()
     void ButtonPressed(int buttonpress) {
+        NEXTButton_Enable(true);
         Buttons_Enable(false);
         HighlightAnswers(buttonpress);
-        // After Delay
-        this.Wait(delay_NextQuestion,()=>{
-            Index += 1;
-            RemoveHighlight();
-            NextQuestion();
-            Enemy_Update();
-        });
     }
 
     ///////////////////////////////////////////////////////////////////////////////
 
     // <= Start()
     void Start() {
-        //Set value for common variables
+        //Set value
         TotalQuestion = Question_Data.Count;
 
         // <= Start game
@@ -180,5 +179,15 @@ public class QuizHandle_Remaster : MonoBehaviour {
     }
     public void ButtonD() {
         ButtonPressed(4);
+    }
+
+    // <<<< Button_Next Pressed
+    public void NEXTButton_Press() {
+        NEXTButton_Enable(false);
+
+        Index += 1;
+        RemoveHighlight();
+        NextQuestion();
+        Enemy_Update();
     }
 }
