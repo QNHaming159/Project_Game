@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/QuizScene.unity
     guid: 887523efde757eb46bcbc399f816dbd7
-  - enabled: 0
-    path: Assets/Scenes/walking scene 2.unity
-    guid: 68de28c9cae88194982090bed1729472
   - enabled: 1
-    path: Assets/Map/Fighting map/Assets/Scenes/QuizAndCombat.unity
+    path: Assets/Scenes/QuizAndCombat.unity
     guid: d36fb819985c77e42aca698ed1410af2
+  - enabled: 0
+    path: Assets/Scenes/Walking.unity
+    guid: 68de28c9cae88194982090bed1729472
   m_configObjects: {}
