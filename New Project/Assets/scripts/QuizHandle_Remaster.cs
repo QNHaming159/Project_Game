@@ -6,15 +6,16 @@ using TMPro;
 
 public class QuizHandle_Remaster : MonoBehaviour {
 
-    //GameObject Variables
+    // GameObject Variables
     public GameObject[] Gameobject_Character;
     public GameObject[] Gameobject_Button;
     public GameObject[] Question_Text;
+    public GameObject[] NextArrow_Image;
 
     public GameObject Button_Next;
     public GameObject Score_Text;
 
-    //Questions Variables
+    // Questions Variables
     [System.Serializable]
     public class Questions {
         public string Question;
@@ -25,10 +26,10 @@ public class QuizHandle_Remaster : MonoBehaviour {
     }
     public List<Questions> Question_Data;
 
-    //Array Variables
+    // Array Variables
     int[] ID_array = new int [4];
 
-    //Common Variables
+    // Common Variables
     int ID, TotalQuestion, True_Answer, Score = 0, Index = 0;
 
     bool Enemy_Respawn = false;
@@ -38,12 +39,11 @@ public class QuizHandle_Remaster : MonoBehaviour {
     // <= Player attack Enemy
     void AttackA_B() {
         Enemy_Respawn = true;
-
         // Animations
         Gameobject_Character[0].GetComponent<Animator>().SetTrigger("Attack");
         Gameobject_Character[1].GetComponent<Animator>().SetTrigger("Defeated");
-        
-
+        Button_Next.GetComponent<Animator>().SetTrigger("NextArrow");
+        Button_Next.GetComponent<Image>().sprite = NextArrow_Image[0].GetComponent<Image>().sprite;
         // Score +10
         ScoreUpdate(+10);
     }
@@ -51,8 +51,10 @@ public class QuizHandle_Remaster : MonoBehaviour {
     // <= Enemy attack Player
     void AttackB_A() {
         // Animations
-        Gameobject_Character[1].GetComponent<Animator>().SetTrigger("attackSlime");
         Gameobject_Character[0].GetComponent<Animator>().SetTrigger("hurt");
+        Gameobject_Character[1].GetComponent<Animator>().SetTrigger("attackSlime");
+        Button_Next.GetComponent<Animator>().SetTrigger("ReturnArrow");
+        Button_Next.GetComponent<Image>().sprite = NextArrow_Image[1].GetComponent<Image>().sprite;
         // Score -10
         ScoreUpdate(-10);
     }
@@ -185,6 +187,7 @@ public class QuizHandle_Remaster : MonoBehaviour {
 
     // <<<< Button_Next Pressed
     public void NEXTButton_Press() {
+        Button_Next.GetComponent<Animator>().SetTrigger("HideArrow");
         NEXTButton_Enable(false);
 
         Index += 1;
