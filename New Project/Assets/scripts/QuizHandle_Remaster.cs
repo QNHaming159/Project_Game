@@ -12,6 +12,8 @@ public class QuizHandle_Remaster : MonoBehaviour {
     public GameObject[] Question_Text;
     public GameObject[] NextArrow_Image;
 
+    public GameObject[] WheelOfName;
+
     public GameObject Button_Next;
     public GameObject Score_Text;
 
@@ -194,5 +196,11 @@ public class QuizHandle_Remaster : MonoBehaviour {
         RemoveHighlight();
         NextQuestion();
         Enemy_Update();
+    }
+
+    // <<<< Wheel_SuperSpin()
+    public void Wheel_SuperSpin() {
+        print("Pressed");
+        WheelOfName[0].GetComponent<Animator>().SetTrigger("DoSuperSpin"); 
     }
 }
