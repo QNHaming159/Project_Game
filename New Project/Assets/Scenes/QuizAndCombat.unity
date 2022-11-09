@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 483263440}
   - component: {fileID: 483263441}
   m_Layer: 0
-  m_Name: Wheel_Number
+  m_Name: Random_Number
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -389,8 +389,8 @@ RectTransform:
   m_GameObject: {fileID: 483263436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 265.9592}
-  m_LocalScale: {x: 20, y: 20, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 6.7, y: 6.7, z: 0}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1490667061}
   m_RootOrder: 1
@@ -420,7 +420,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '36
+  m_text: '0
 
 '
   m_isRightToLeft: 0
@@ -449,8 +449,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 3.3
-  m_fontSizeBase: 3.3
+  m_fontSize: 23
+  m_fontSizeBase: 23
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 0
@@ -485,7 +485,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: -4.4144363, z: 0, w: -2.3175783}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1211,11 +1211,9 @@ MonoBehaviour:
   NextArrow_Image:
   - {fileID: 1371498523}
   - {fileID: 1802777683}
-  WheelOfName:
-  - {fileID: 1292346256}
-  - {fileID: 483263436}
   Button_Next: {fileID: 84695372}
   Score_Text: {fileID: 1424965546}
+  Number_Text: {fileID: 483263436}
   Question_Data:
   - Question: "Nguy\u1EC5n Khoa \u0110i\u1EC1m xu\u1EA5t th\xE2n t\u1EEB \u0111\xE2u?"
     TrueAnswer: "Hu\u1EBF"
@@ -1800,9 +1798,8 @@ GameObject:
   - component: {fileID: 1292346260}
   - component: {fileID: 1292346262}
   - component: {fileID: 1292346261}
-  - component: {fileID: 1292346263}
   m_Layer: 0
-  m_Name: Wheel
+  m_Name: Sign
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1817,15 +1814,15 @@ RectTransform:
   m_GameObject: {fileID: 1292346256}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 265.9592}
-  m_LocalScale: {x: 20, y: 20, z: 0}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 18, y: 18, z: 0}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1490667061}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 264.79837, y: 118.70684}
+  m_AnchoredPosition: {x: 264.79813, y: 118.707184}
   m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1292346261
@@ -1848,7 +1845,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8d70431efc990cb4ab49da3ee052f06d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a3888cac26a36a44b980cf582ada66ee, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1866,26 +1863,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1292346256}
   m_CullTransparentMesh: 1
---- !u!95 &1292346263
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1292346256}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6fcd06770e4cda94cb9048d7c8fb7a29, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1313167597
 GameObject:
   m_ObjectHideFlags: 0
